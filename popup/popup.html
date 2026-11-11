@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>anchemeno</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <span class="logo-badge" aria-hidden="true">(–)</span>
+      <div>
+        <h1 class="title">anchemeno</h1>
+        <p class="subtitle">Nascondi parentesi negli <code>&lt;article&gt;</code></p>
+      </div>
+    </div>
+    <label class="switch" for="toggle-enabled" title="Attiva o disattiva la rimozione delle parentesi">
+      <input type="checkbox" id="toggle-enabled" checked>
+      <span class="slider"></span>
+    </label>
+  </header>
+
+  <section class="status-card" id="status-card">
+    <div class="status-row">
+      <span class="status-label">Stato filtro</span>
+      <span class="status-pill" id="status-pill">Attivo</span>
+    </div>
+    <div class="status-row">
+      <span class="status-label">Parentesi nell'articolo</span>
+      <strong class="counter-value" id="paren-counter">0</strong>
+    </div>
+    <p class="site-hint" id="site-hint">Verifica pagina in corso…</p>
+  </section>
+
+  <section class="domain-section">
+    <label class="field-label" for="domain-input">Sito di informazione attivo</label>
+    <div class="domain-input-group">
+      <input
+        type="text"
+        id="domain-input"
+        placeholder="es. ilpost.it"
+        spellcheck="false"
+        autocomplete="off"
+      >
+      <button type="button" id="save-domain-btn" class="btn-primary">Salva</button>
+    </div>
+    <div class="quick-actions">
+      <button type="button" id="use-current-site-btn" class="btn-link">
+        Usa il dominio della scheda aperta
+      </button>
+    </div>
+  </section>
+
+  <script src="popup.js"></script>
+</body>
+</html>

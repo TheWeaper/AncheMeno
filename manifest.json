@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "anchemeno",
+  "version": "1.0.0",
+  "description": "Nasconde o ripristina il testo tra parentesi tonde (...) all'interno dei tag <article> sui siti di informazione.",
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "anchemeno — Gestisci testo tra parentesi",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.ilpost.it/*",
+        "http://*/*",
+        "https://*/*"
+      ],
+      "css": [
+        "content/content.css"
+      ],
+      "js": [
+        "content/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

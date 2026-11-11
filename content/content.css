@@ -1,0 +1,7 @@
+/*
+ * anchemeno — Stili per nascondere/mostrare il testo tra parentesi tonde dentro <article>
+ */
+
+html.anchemeno-active article .anchemeno-paren-wrapper {
+  display: none !important;
+}
