@@ -21,7 +21,7 @@ Con un clic dal popup puoi attivare o disattivare il filtro in tempo reale (senz
 
 1. Clona o scarica questo repository sul tuo computer:
    ```bash
-   git clone https://github.com/tuo-username/anchemeno.git
+   git clone https://github.com/TheWeaper/AncheMeno.git
    ```
 2. Apri Google Chrome (o un altro browser Chromium come Brave, Edge, Arc) e vai all'indirizzo:
    ```text
