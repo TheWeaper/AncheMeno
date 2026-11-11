@@ -26,6 +26,10 @@
     'IFRAME'
   ]);
 
+  const IGNORED_CLASSES = new Set([
+    'wp-caption-text'
+  ]);
+
   const BLOCK_SELECTOR = 'p, li, blockquote, h1, h2, h3, h4, h5, h6, figcaption, dd, dt, td, th, div, section, header, footer, article';
   const PUNCTUATION_OR_SPACE_RE = /^[\s,.;:!?)\]}\u00BB\u201D]/;
 
@@ -86,13 +90,18 @@
   }
 
   /**
-   * Controlla se un nodo di testo deve essere ignorato (es. dentro <script> o già wrappato)
+   * Controlla se un nodo di testo deve essere ignorato (es. dentro <script>, classe esclusa come wp-caption-text o già wrappato)
    */
   function shouldIgnoreTextNode(textNode) {
     let el = textNode.parentElement;
     while (el && el !== document.body) {
       if (IGNORED_TAGS.has(el.tagName)) return true;
-      if (el.classList && el.classList.contains(WRAPPER_CLASS)) return true;
+      if (el.classList) {
+        if (el.classList.contains(WRAPPER_CLASS)) return true;
+        for (const cls of IGNORED_CLASSES) {
+          if (el.classList.contains(cls)) return true;
+        }
+      }
       el = el.parentElement;
     }
     return false;
