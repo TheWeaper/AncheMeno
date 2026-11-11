@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "anchemeno",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Nasconde o ripristina il testo tra parentesi tonde (...) all'interno dei tag <article> sui siti di informazione.",
   "permissions": [
     "storage",
